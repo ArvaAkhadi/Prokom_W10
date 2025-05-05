@@ -1,0 +1,19 @@
+def huruf_ke_angka(huruf):
+    return ord(huruf.upper()) - ord('A') + 1
+
+def hitung_nama(nama):
+    nama = nama.upper()
+    if len(nama) < 3:
+        print("Nama harus memiliki minimal 3 huruf.")
+        return
+
+    huruf_pertama = huruf_ke_angka(nama[0])
+    huruf_tengah = huruf_ke_angka(nama[len(nama)//2])
+    huruf_terakhir = huruf_ke_angka(nama[-1])
+
+    total = huruf_pertama + huruf_tengah + huruf_terakhir
+    print(f"({nama[0]} + {nama[len(nama)//2]} + {nama[-1]}) = ({huruf_pertama} + {huruf_tengah} + {huruf_terakhir}) = {total}")
+
+# Nama dimasukkan langsung di sini
+nama = "NAMA ANGGOTA"
+hitung_nama(nama)
